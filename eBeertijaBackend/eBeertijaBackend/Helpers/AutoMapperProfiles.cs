@@ -29,6 +29,21 @@ namespace ebeertijaBackend.Helpers
 
             CreateMap<Stol, StolDto>();
             CreateMap<StolDto, Stol>();
+
+            CreateMap<Narudzba, NarudzbaDto>()
+                .ForMember(dest => dest.SerijskiBrojUredaja, opt =>
+                {
+                    opt.MapFrom(src => src.Stol.SerijskiBrojUredaja);
+                })
+                .ForMember(dest => dest.OznakaStola, opt =>
+                {
+                    opt.MapFrom(src => src.Stol.OznakaStola);
+                });
+            CreateMap<StavkaNarudzbe, StavkaNarudzbeDto>()
+            .ForMember(dest => dest.NazivStavke, opt =>
+            {
+                opt.MapFrom(src => src.StavkaCjenika.Naziv);
+            });
         }
     }
 }
