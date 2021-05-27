@@ -44,6 +44,16 @@ namespace ebeertijaBackend.Helpers
             {
                 opt.MapFrom(src => src.StavkaCjenika.Naziv);
             });
+
+            CreateMap<StavkaRacunaDto, StavkaRacuna>();
+
+            CreateMap<StavkaRacuna, StavkaRacunaDto>()
+           .ForMember(dest => dest.NazivStavke, opt =>
+           {
+               opt.MapFrom(src => src.StavkaCjenika.Naziv);
+           });
+
+            CreateMap<RacunDto, Racun>();
         }
     }
 }
