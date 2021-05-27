@@ -26,6 +26,9 @@ namespace ebeertijaBackend.Helpers
             CreateMap<CjenikDto, Cjenik>();
             CreateMap<StavkaCjenika, StavkaCjenikaDto>();
             CreateMap<StavkaCjenikaDto, StavkaCjenika>();
+
+            CreateMap<Stol, StolDto>();
+            CreateMap<StolDto, Stol>();
         }
     }
 }

@@ -86,6 +86,8 @@ namespace ebeertijaBackend.DatabaseContext
         public DbSet<Cjenik> Cjenici { get; set; }
         public DbSet<StavkaCjenika> StavkeCjenika { get; set; }
 
+        public DbSet<Stol> Stolovi { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             User gabrijela = new User { Id = 1, Email = "gjerkovic@veleri.hr", IsActive = true, Username = "gabrijela", FullName = "Gabrijela Jerković", Vrsta = VrstaUsera.ADMINISTRATOR };
