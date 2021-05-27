@@ -52,7 +52,6 @@ D:\ebeertija\e-beertija_MarinEniGabi\eBeertijaBackend\eBeertijaBackend\obj\Debug
 D:\ebeertija\e-beertija_MarinEniGabi\eBeertijaBackend\eBeertijaBackend\obj\Debug\netcoreapp3.1\eBeertijaBackend.dll
 D:\ebeertija\e-beertija_MarinEniGabi\eBeertijaBackend\eBeertijaBackend\obj\Debug\netcoreapp3.1\eBeertijaBackend.pdb
 D:\ebeertija\e-beertija_MarinEniGabi\eBeertijaBackend\eBeertijaBackend\obj\Debug\netcoreapp3.1\eBeertijaBackend.genruntimeconfig.cache
-D:\ebeertija\e-beertija_MarinEniGabi\eBeertijaBackend\eBeertijaBackend\obj\Debug\netcoreapp3.1\eBeertijaBackend.csprojAssemblyReference.cache
 C:\Users\Gabz\source\repos\eBeertija\eBeertijaBackend\eBeertijaBackend\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\Gabz\source\repos\eBeertija\eBeertijaBackend\eBeertijaBackend\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\Gabz\source\repos\eBeertija\eBeertijaBackend\eBeertijaBackend\bin\Debug\netcoreapp3.1\eBeertijaBackend.exe
