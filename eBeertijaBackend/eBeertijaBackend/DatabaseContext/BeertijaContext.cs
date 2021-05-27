@@ -83,6 +83,8 @@ namespace ebeertijaBackend.DatabaseContext
 
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Cjenik> Cjenici { get; set; }
+        public DbSet<StavkaCjenika> StavkeCjenika { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

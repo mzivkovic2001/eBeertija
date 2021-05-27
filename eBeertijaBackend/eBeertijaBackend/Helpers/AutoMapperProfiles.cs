@@ -14,6 +14,18 @@ namespace ebeertijaBackend.Helpers
         {
             CreateMap<User, UserDto>();
             CreateMap<UserDto, User>();
+            CreateMap<Cjenik, CjenikDto>()
+            .ForMember(dest => dest.IsEditable, opt =>
+                {
+                    opt.MapFrom(src => src.DatumPocetkaPrimjene.Date > DateTime.Now.Date);
+                })
+                .ForMember(dest => dest.StavkeCjenika, opt =>
+                {
+                    opt.MapFrom(src => src.StavkeCjenika.Where(s => s.IsActive).ToList());
+                });
+            CreateMap<CjenikDto, Cjenik>();
+            CreateMap<StavkaCjenika, StavkaCjenikaDto>();
+            CreateMap<StavkaCjenikaDto, StavkaCjenika>();
         }
     }
 }
