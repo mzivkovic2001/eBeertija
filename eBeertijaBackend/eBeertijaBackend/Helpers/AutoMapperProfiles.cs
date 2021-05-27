@@ -54,6 +54,12 @@ namespace ebeertijaBackend.Helpers
            });
 
             CreateMap<RacunDto, Racun>();
+
+            CreateMap<Racun, RacunIzvjestajDto>()
+                .ForMember(dest => dest.OznakaStola, opt =>
+                {
+                    opt.MapFrom(src => src.Stol.OznakaStola);
+                });
         }
     }
 }
