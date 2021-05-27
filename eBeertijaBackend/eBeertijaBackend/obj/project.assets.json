@@ -1473,19 +1473,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Eni\\.nuget\\packages\\": {}
+    "C:\\Users\\Gabz\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Eni\\Source\\Repos\\eBeertija\\eBeertijaBackend\\eBeertijaBackend\\eBeertijaBackend.csproj",
+      "projectUniqueName": "C:\\Users\\Gabz\\source\\repos\\eBeertija\\eBeertijaBackend\\eBeertijaBackend\\eBeertijaBackend.csproj",
       "projectName": "eBeertijaBackend",
-      "projectPath": "C:\\Users\\Eni\\Source\\Repos\\eBeertija\\eBeertijaBackend\\eBeertijaBackend\\eBeertijaBackend.csproj",
-      "packagesPath": "C:\\Users\\Eni\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Eni\\Source\\Repos\\eBeertija\\eBeertijaBackend\\eBeertijaBackend\\obj\\",
+      "projectPath": "C:\\Users\\Gabz\\source\\repos\\eBeertija\\eBeertijaBackend\\eBeertijaBackend\\eBeertijaBackend.csproj",
+      "packagesPath": "C:\\Users\\Gabz\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Gabz\\source\\repos\\eBeertija\\eBeertijaBackend\\eBeertijaBackend\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Eni\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Gabz\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
