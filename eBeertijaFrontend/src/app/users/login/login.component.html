@@ -1,0 +1,92 @@
+<!-- <h2>Login</h2>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+            <div *ngIf="f.username.errors.required">Username is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">Password is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary">Login</button>
+        <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+    </div>
+</form> -->
+
+<!-- Begin page -->
+<div class="accountbg" style="background: url('assets/images/bg-1.jpg');background-size: cover;background-position: center; width:100%;"></div>
+
+<div class="wrapper-page account-page-full">
+  <!-- Begin page -->
+
+
+
+    <div class="card">
+        <div class="card-block">
+
+            <div class="account-box">
+
+                <div class="card-box p-5">
+                    <h2 class="text-uppercase text-center pb-4">
+                        <a href="index.html" class="text-success">
+                            <span><img src="assets/images/eBeertijaLogo.png" alt="eBeertijaLogo" height="72"></span>
+                        </a>
+                    </h2>
+
+                    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="" action="#">
+
+                        <div class="form-group m-b-20 row">
+                            <div class="col-12">
+                                <label for="username">Korisničko ime</label>
+                                <input class="form-control" formControlName="username" type="username" id="username" required="" 
+                                placeholder="Unesite svoje korisničko ime" [ngClass]="{ 'is-invalid': submitted && f.username.errors }">
+                                <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                                    <div *ngIf="f.username.errors.required">Korisničko ime je obvezno polje.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-12">
+                                <label for="password">Password</label>
+                                <input class="form-control" formControlName="password" type="password" required="" id="password" 
+                                placeholder="Unesite svoju lozinku" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                    <div *ngIf="f.password.errors.required">Lozinka je obvezno polje.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row text-center">
+                            <div class="col-12">
+                                <button class="btn btn-block btn-custom waves-effect waves-light" type="submit">Prijava</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+</div>
+
+
+ <!-- jQuery 
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/metisMenu.min.js"></script>
+<script src="assets/js/waves.js"></script>
+<script src="assets/js/jquery.slimscroll.js"></script>
+
+ App js 
+<script src="assets/js/jquery.core.js"></script>
+<script src="assets/js/jquery.app.js"></script> -->

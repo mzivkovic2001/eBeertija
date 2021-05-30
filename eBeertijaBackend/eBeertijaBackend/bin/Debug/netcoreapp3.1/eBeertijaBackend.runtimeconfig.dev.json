@@ -1,8 +1,8 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "C:\\Users\\Eni\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\Eni\\.nuget\\packages"
+      "C:\\Users\\marin\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\marin\\.nuget\\packages"
     ]
   }
 }

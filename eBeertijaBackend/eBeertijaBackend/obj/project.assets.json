@@ -1473,19 +1473,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Eni\\.nuget\\packages\\": {}
+    "C:\\Users\\marin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Eni\\Source\\Repos\\eBeertija\\eBeertijaBackend\\eBeertijaBackend\\eBeertijaBackend.csproj",
+      "projectUniqueName": "D:\\ebeertija\\e-beertija_MarinEniGabi\\eBeertijaBackend\\eBeertijaBackend\\eBeertijaBackend.csproj",
       "projectName": "eBeertijaBackend",
-      "projectPath": "C:\\Users\\Eni\\Source\\Repos\\eBeertija\\eBeertijaBackend\\eBeertijaBackend\\eBeertijaBackend.csproj",
-      "packagesPath": "C:\\Users\\Eni\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Eni\\Source\\Repos\\eBeertija\\eBeertijaBackend\\eBeertijaBackend\\obj\\",
+      "projectPath": "D:\\ebeertija\\e-beertija_MarinEniGabi\\eBeertijaBackend\\eBeertijaBackend\\eBeertijaBackend.csproj",
+      "packagesPath": "C:\\Users\\marin\\.nuget\\packages\\",
+      "outputPath": "D:\\ebeertija\\e-beertija_MarinEniGabi\\eBeertijaBackend\\eBeertijaBackend\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Eni\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\marin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1552,7 +1552,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,0 +1,18 @@
+{
+  "main": "main.tns.js",
+  "android": {
+    "v8Flags": "--expose_gc",
+    "markingMode": "none"
+  },
+  "dependencies": {
+    "@angular/material": "^8.2.3",
+    "angular-datatables": "^9.0.2",
+    "datatables.net": "^1.10.21",
+    "datatables.net-dt": "^1.10.21",
+    "jquery": "^3.5.1"
+  },
+  "devDependencies": {
+    "@types/datatables.net": "^1.10.19",
+    "@types/jquery": "^3.3.38"
+  }
+}

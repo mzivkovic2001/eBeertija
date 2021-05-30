@@ -1,0 +1,9 @@
+.button-container {
+    margin-top: 25px;
+    text-align: center;
+  }
+  
+  .button-center {
+    width: 100%;
+    display: inline-block;
+  }
