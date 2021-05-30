@@ -1,0 +1,62 @@
+<div class="container-fluid">
+<div class="row" *ngIf=(!editMode) style="margin-top: 5vh; margin-bottom: 20px;">
+    <div class="gumbLayout">
+            <div class="justify-content-center">
+                    <button (click)="editMode=true" class="btn btn-info waves-effect waves-light center-block">
+                        <i class="fa fa-pencil m-r-5"></i><span> Raspored</span></button>
+            </div>
+    </div>
+</div>
+
+<div class="row" *ngIf=(editMode) style="margin-top: 5vh; margin-bottom: 16px;">
+    <div class="gumbLayout">
+        <div class="form-inline">
+            <div class="col-5">
+                <button mat-raised-button (click)="onCreate()"
+                    class="btn btn-outline-secondary btn-rounded waves-light waves-effect">
+                    <i class="mdi mdi-library-plus"></i><span> Dodavanje stola</span></button>
+            </div>
+            <div class="col-5">
+                <div class="pull-right">
+                    <button (click)="SaveAll()" class="btn btn-info waves-effect waves-light"><span>Spremi
+                        </span><i class="fa fa-save m-r-5"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="row" *ngIf="isLoaded && !editMode">
+    <div class="viewportt" 
+     style="margin-bottom: 35px;">
+     <ng-container *ngFor="let stol of grafickiPrikaz?.aktivniStolovi">
+        <ng-template #popContent>
+            <div *ngIf="stol?.narudzbaId != null" class="row justify-content-center">
+                <button class="btn btn-info btn-sm" (click)="goNarudzba(stol.narudzbaId)"><i class="fa fa-eye"></i></button>
+            </div>
+        </ng-template>
+        <button type="button"  id={{stol?.id}} [ngStyle]="{transform: 'rotate('+stol.orientation+'deg)'}"
+        style="width: 90px; height: 50px;" #item class="itemm" 
+        [ngClass]="[stol.stolClass]" [style.top.px]="stol?.y" [style.left.px]="stol?.x"
+        (dblclick)="goRacun(stol)" [autoClose]="'outside'"
+        popoverTitle="{{stol?.narudzbaId != null ?  stol.prioritetNarudzbe + '. Narudzba' : ''}}" [ngbPopover]="popContent"
+        popoverClass="my-custom-class">
+        <span> <strong>{{stol?.oznakaStola}}</strong> </span>
+    </button>
+     </ng-container>
+    </div>
+</div>
+
+<div class="row" *ngIf="isLoaded && editMode">
+    <div class="viewportt"
+    cdkDrop style="margin-bottom: 35px;">
+        <button (dblclick)="onEdit(stol)" [ngStyle]="{transform: 'rotate('+stol.orientation+'deg)'}"
+            style="width: 90px; height: 50px;" #item class="itemm" *ngFor="let stol of grafickiPrikaz?.aktivniStolovi"
+            [ngClass]="stol.stolClass" id={{stol?.id}} [style.top.px]="stol?.y" [style.left.px]="stol?.x"
+            cdkDrag (cdkDragEnded)="dragEnd($event)">
+            <span>{{stol?.oznakaStola}}</span></button>
+    </div>
+</div>
+</div>

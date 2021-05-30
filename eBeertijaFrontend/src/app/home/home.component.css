@@ -1,0 +1,45 @@
+.far {
+    font-family: Font Awesome 5 Free, fa-regular-400;
+    font-weight: 400; 
+  }
+  
+  .fab {
+    font-family: Font Awesome 5 Brands, fa-brands-400;
+    font-weight: 400; 
+  }
+  
+  .fas {
+    font-family: Font Awesome 5 Free, fa-solid-900;
+    font-weight: 900; 
+  }
+  
+  .viewportt {
+      position: relative;
+      display: block;
+      margin: 20px auto;
+      height: 650px;
+      width: 1280px;
+      background-color: #ffffff;
+      border: 20px solid #e0e0e0;
+    }
+    
+    .itemm {
+      position: absolute;
+    }
+  
+    .gumbLayout {
+      width: 1280px;
+      margin: 0 auto;
+    }
+  
+    .marginLeftStyle {
+      margin-left: 10px;
+    }
+
+    .my-custom-class {
+        background: #ececec;
+      }
+      .my-custom-class .arrow::after {
+        
+        border-top-color: #ececec;
+      }
