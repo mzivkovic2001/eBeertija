@@ -1,0 +1,66 @@
+<h4 mat-dialog-title class="custom-modal-title" style="margin-bottom: 25px">{{ data.id > 0 ? "Ažuriranje korisnika" : "Unos korisnika" }}</h4>
+
+<form [formGroup]="addUpdateKorisnikForm" (ngSubmit)="onSubmit()" class="" action="#">
+
+  <div class="col-12">
+    <mat-form-field class="col-12">
+      <mat-select required id="vrstaUsera" [(value)]="data.vrstaUseraId" formControlName="vrstaUsera"
+        placeholder="Uloga korisnika"  [ngClass]="{ 'is-invalid': submitted && vrstaUsera.errors }">
+        <ng-container *ngFor="let vrsta of data.vrstaUsera">
+          <mat-option [value]="vrsta.id">{{vrsta.naziv}}</mat-option>
+        </ng-container>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+<div class="col-12">
+    <mat-form-field class="col-12"> 
+      <input id="username" formControlName="username" required placeholder="Korisničko ime"  
+      [ngClass]="{ 'is-invalid': submitted && username.errors }" matInput>
+    </mat-form-field>
+  </div>
+
+  <div class="col-12">
+    <mat-form-field class="col-12"> 
+      <input id="fullName" formControlName="fullName" required placeholder="Naziv (ime + prezime)"  
+      [ngClass]="{ 'is-invalid': submitted && fullName.errors }" matInput>
+    </mat-form-field>
+  </div>
+
+  <div class="col-12">
+    <mat-form-field class="col-12"> 
+      <input id="oib" formControlName="oib" required placeholder="OIB"  
+      [ngClass]="{ 'is-invalid': submitted && oib.errors }" matInput>
+    </mat-form-field>
+  </div>
+
+  <div class="col-12">
+    <mat-form-field class="col-12"> 
+      <input id="email" formControlName="email" required placeholder="E-Mail"  
+      [ngClass]="{ 'is-invalid': submitted && email.errors }" matInput>
+    </mat-form-field>
+  </div>
+
+  <div *ngIf="data.id == null && isUpdateMode.value != true" class="col-12">
+    <mat-form-field class="col-12"> 
+      <input id="password" formControlName="password" placeholder="Lozinka" required 
+       matInput>
+    </mat-form-field>
+  </div>
+
+  <div *ngIf="data.id == null && isUpdateMode.value != true" class="col-12">
+    <mat-form-field class="col-12"> 
+      <input required id="passwordRepeat" formControlName="passwordRepeat" placeholder="Ponovite lozinku"  
+       matInput>
+    </mat-form-field>
+  </div>
+
+
+  <div mat-dialog-actions class="row button-container">
+      <div class="button-center">
+        <button mat-button style="margin-right: 5px" class="btn btn-success waves-effect waves-light" 
+        type="submit" [disabled]="!addUpdateKorisnikForm.valid">Spremi</button>
+        <button mat-button (click)="onNoClick()" class="btn btn-warning waves-effect waves-light">Zatvori</button> 
+      </div>
+    </div>
+  </form>
