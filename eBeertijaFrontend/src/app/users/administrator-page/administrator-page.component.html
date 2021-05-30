@@ -1,0 +1,59 @@
+<div *ngIf="isLoaded" style="width: 100vw; height:100vh;">
+
+  <div class="gumbs">
+  <div class="row justify-content-center" style="width: 70vw; height: auto; padding: 15px;">
+    <div class="col col-6">
+    <h4 style="color: #2e2e2e"> Korisnički računi </h4>
+  </div>
+  <div class=" col col-6">
+    <button *ngIf="trenutniUser?.role < 3" class="btn btn-info waves-effect waves-light pull-right" 
+    (click)="onNew()"> <span> + Novi korisnik </span> </button>
+  </div>
+  </div>
+</div>
+
+  <mat-table #table *ngIf="isLoaded" [dataSource]="korisnicilistData" matSort class="mat-elevation-z8 datatable" style="width: 70vw; height: auto;">
+      <ng-container matColumnDef="korisnickoIme" style="width: 250px">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Korisničko ime</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.username}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="fullName" style="width: 250px">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Naziv</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.fullName}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="oib" style="width: 250px">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>OIB</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.oib}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="email" style="width: 250px">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>E-Mail</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.email}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="uloga" style="width: 250px">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Uloga</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{getStringOfUloga(element.vrsta)}}</mat-cell>
+        </ng-container>
+
+      <ng-container matColumnDef="actions" style="width: 250px">
+        <mat-header-cell *matHeaderCellDef></mat-header-cell>
+        <mat-cell *matCellDef="let element" class="justify-content-center">
+          <button *ngIf="trenutniUser?.role < 3 || trenutniUser?.role > 1 && trenutniUser?.id == element.id" (click)="updateKorisnik(element)" type="button"
+            class="btn btn-warning btn-md" style="margin-right: 10px;"><i class="fa fa-pencil" style="color: #fff"></i></button>
+            
+          <button *ngIf="trenutniUser?.role < 3 && trenutniUser?.id != element.id" (click)="deleteKorisnik(element)" type="button"
+            class="btn btn-danger btn-md"><i class="fa fa-trash" style="color: #fff"></i></button>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  
+  
+    </mat-table>
+
+</div>
+

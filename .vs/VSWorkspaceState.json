@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\eBeertijaBackend",
+    "\\eBeertijaBackend\\eBeertijaBackend",
+    "\\eBeertijaBackend\\eBeertijaBackend\\Helpers"
   ],
-  "SelectedNode": "\\eBeertijaBackend.sln",
+  "SelectedNode": "\\eBeertijaBackend\\eBeertijaBackend\\Helpers\\AutoMapperProfiles.cs",
   "PreviewInSolutionExplorer": false
 }
