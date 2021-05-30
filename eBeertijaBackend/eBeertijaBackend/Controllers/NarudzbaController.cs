@@ -54,7 +54,7 @@ namespace ebeertijaBackend.Controllers
                 broj = 1;
             }
 
-            var stol = context.Stolovi.Where(s => s.SerijskiBrojUredaja == narudzba.SerijskiBrojUredaja).FirstOrDefault();
+            var stol = context.Stolovi.Where(s => s.SerijskiBrojUredaja == narudzba.SerijskiBrojUredaja).Include(n => n.Narudzbe).FirstOrDefault();
             if(stol == null)
             {
                 return BadRequest("Neispravan serijski broj.");

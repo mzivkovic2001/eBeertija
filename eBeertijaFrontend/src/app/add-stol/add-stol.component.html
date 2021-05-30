@@ -1,0 +1,42 @@
+
+<div>
+    <h4 mat-dialog-title class="custom-modal-title" style="margin-bottom: 25px">{{data.oznakaStola!==''?"Ažuriranje stola":"Unos stola"}}</h4>
+    <form [formGroup]="addEditStolForm" (ngSubmit)="onSubmit()" class="" action="#">
+    <div mat-dialog-content>
+      <div class="col-12" style="margin-bottom: 15px">
+        <mat-form-field class="col-12"> 
+          <input matInput id="oznakaStola" formControlName="oznakaStola" required placeholder="Oznaka stola"  
+          [ngClass]="{ 'is-invalid': submitted && oznakaStola.errors }">
+        </mat-form-field>
+      </div>
+  
+      <div class="col-12" style="margin-bottom: 15px">
+        <mat-form-field class="col-12">
+          <mat-select id="orientation" formControlName="orientation" required [ngClass]="{ 'is-invalid': submitted && orientation.errors }"   
+          [(value)]="data.odabranaOrientationStupanj" placeholder="Orijentacija štanda">
+            <ng-container *ngFor="let orientation of data.orientation">
+              <mat-option [value]="orientation.stupanj">{{orientation.naziv}}</mat-option>
+            </ng-container>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="col-12" style="margin-bottom: 15px">
+        <mat-form-field class="col-12"> 
+          <input matInput id="serijskiBrojUredaja" formControlName="serijskiBrojUredaja" placeholder="Serijski broj uređaja">
+        </mat-form-field>
+      </div>
+    </div>
+    <div mat-dialog-actions class="row">
+      <div class="offset-1 col-3">
+        <button *ngIf="data?.isEdit" mat-button (click)="onDelete()"
+          class="btn btn-danger waves-effect waves-light">Izbriši</button>
+      </div>
+      <div class="offset-2 col-6">
+        <button mat-button style="margin-right: 5px" class="btn btn-success waves-effect waves-light"
+         type="submit" [disabled]="!addEditStolForm.valid">Spremi</button>
+        <button mat-button (click)="onNoClick()" class="btn btn-warning waves-effect waves-light">Zatvori</button>
+      </div>
+    </div>
+  </form>
+  </div>
