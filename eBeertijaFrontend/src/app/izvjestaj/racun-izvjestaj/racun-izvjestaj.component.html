@@ -1,0 +1,162 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-8" style="margin-top: 30px;">
+            <div class="card-box">
+
+                <div class="row" style="margin-bottom: 20px;">
+                    <div class="col-12" style="margin-bottom: 20px;">
+                    <h4 class="header-title text-left">Izvještaj o računima</h4>
+                  </div>
+                    <div class="col-12">
+                        <div class="col-6 form-group">
+                            <mat-form-field class="col-10">
+                                <input id="datum" [(ngModel)]="displayDate"
+                                  matInput [matDatepicker]="picker1" placeholder="Odaberite datum" class="offset-sm-3 col-sm-6">
+                                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                                <mat-datepicker #picker1></mat-datepicker>
+                              </mat-form-field>
+                            <button style="height: 35px;" type="button" class="btn btn-custom waves-effect waves-light center-block"
+                                (click)="pretragaPoDatumu()">Potvrda</button>
+                        </div>
+                      </div>
+                </div>
+
+                <table datatable *ngIf="isLoaded" id="datatable-buttons" [dtOptions]="opcije" [dtTrigger]="dtTrigger" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                    <thead>
+                    <tr>
+                        <th>Stavke</th>
+                        <th>Br. rac.</th>
+                        <th>Datum</th>
+                        <th>Vrijeme</th>
+                        <th>Ukupno</th>
+                        <th>Stol</th>
+                        <th>Zaposlenik</th>
+                        <th>Narudžba</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let racun of racunIzvjestaj">
+                        <td align="center">
+                            <button type="button" class="btn btn-outline-danger btn-sm" (click)="pogledajStavke(racun)"><i class="fa fa-info"></i></button>
+                        </td>
+                        <td>{{racun.brojOpis}}</td>
+                        <td>{{racun.datum | date: 'dd.MM.yyyy'}}</td>
+                        <td>{{racun.datum | date: 'hh:mm:ss'}}</td>
+                        <td>{{racun.ukupnoSaPdvom}} kn</td>
+                        <td>{{racun.oznakaStola}}</td>
+                        <td>{{racun.nazivKorisnika}}</td>
+                        <td align="center">
+                            <button *ngIf="racun.narudzbaId != null" type="button" class="btn btn-info btn-sm" (click)="pogledajNarudzbu(racun)">
+                              <i class="fa fa-eye"></i></button>
+                        </td>
+
+                        <td align="center">
+                    <button *ngIf="racun.isStorniran == false && racun.storniraniRacunId == null" type="button" class="btn btn-warning btn-sm" (click)="pogledajNarudzbu(racun)">
+                    <i class="fa fa-trash" (click)="stornoRacuna(racun)"></i></button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+        <div *ngIf="isViewNarudzbe == true" class="col-4" style="margin-top: 30px;">
+            <div class="card-box">
+                <div class="row" style="margin-bottom: 20px;">
+                    <div class="col-12">
+                    <h4 class="header-title text-left">Narudžba računa</h4>
+                  </div>
+                </div>
+
+                <div class="row justify-content-center" style="margin-bottom: 20px;">
+                    <div class="justify-content-center col-12">
+                        <div>
+                            <form class="form-horizontal" role="form">
+                                <div class="form-group row justify-content-center">
+                                    <label class="col-md-2 col-form-label">Br. nar.</label>
+                                    <div class="col-md-5">
+                                        <input class="form-control" readonly="" value="{{viewNarudzba.broj}}">
+                                    </div>
+                                </div>
+                                <div class="form-group row justify-content-center">
+                                    <label class="col-md-2 col-form-label">Datum</label>
+                                    <div class="col-md-5">
+                                        <input class="form-control" readonly="" value="{{viewNarudzba.datum | date: 'dd.MM.yyyy'}} | {{viewNarudzba.datum | date: 'hh:mm:ss'}}">
+                                    </div>
+                                </div>
+                                <div class="form-group row justify-content-center">
+                                    <label class="col-md-2 col-form-label">Ukupno</label>
+                                    <div class="col-md-5">
+                                        <input class="form-control" readonly="" value="{{viewNarudzba.ukupnoSaPdvom}} kn">
+                                    </div>
+                                </div>
+                                <div class="form-group row justify-content-center">
+                                    <label class="col-md-2 col-form-label">Stol</label>
+                                    <div class="col-md-5">
+                                        <input class="form-control" readonly="" value="{{viewNarudzba.oznakaStola}}">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <table datatable id="datatable-buttons" [dtOptions]="opcijeNarudzba" [dtTrigger]="dtTriggerNarudzba" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                    <thead>
+                    <tr>
+                        <th>Stavka</th>
+                        <th>J.C.</th>
+                        <th>Kolicina</th>
+                        <th>Ukupno</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let stavka of viewNarudzba.stavkeNarudzbe">
+                        <td>{{stavka.nazivStavke}}</td>
+                        <td>{{stavka.jedinicnaCijenaStavke}} kn</td>
+                        <td>{{stavka.kolicina}}</td>
+                        <td>{{stavka.ukupno}} kn</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+
+            </div>
+        </div>
+
+        <div *ngIf="isViewStavki == true" class="col-4" style="margin-top: 30px;">
+            <div class="card-box">
+                <div class="row" style="margin-bottom: 20px;">
+                    <div class="col-12">
+                    <h4 class="header-title text-left">Stavke računa</h4>
+                  </div>
+                </div>
+
+                <table datatable id="datatable-buttons"  [dtTrigger]="dtTriggerStavka" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                    <thead>
+                    <tr>
+                        <th>Stavka</th>
+                        <th>J.C.</th>
+                        <th>Kolicina</th>
+                        <th>Ukupno</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let stavka of stavkeOdabranogRacuna">
+                        <td>{{stavka.nazivStavke}}</td>
+                        <td>{{stavka.jedinicnaCijenaStavke}} kn</td>
+                        <td>{{stavka.kolicina}}</td>
+                        <td>{{stavka.ukupnoSaPdvom}} kn</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+
+            </div>
+        </div>
+
+
+    </div>
+</div>
