@@ -1,0 +1,58 @@
+<form [formGroup]="addStavkaForm" (ngSubmit)="onSubmit()" class="" action="#"> 
+<div>
+    <h4 mat-dialog-title class="custom-modal-title" style="margin-bottom: 25px">{{ data.id > 0 ? "Uređivanje stavke" : "Unos stavke" }}</h4>
+    <div mat-dialog-content>
+
+      <div class="row justify-content-center" style="margin-bottom: 15px">
+        <mat-form-field class="col-8">
+          <input required id="naziv" formControlName="naziv" placeholder="Naziv stavke" matInput [ngClass]="{ 'is-invalid': submitted && naziv.errors }">
+        </mat-form-field>
+      </div>
+
+      
+      <div class="row justify-content-center" style="margin-bottom: 15px">
+        <!-- <p>Vrsta štanda</p> -->
+        <mat-form-field class="col-8">
+          <mat-select required id="kategorija" formControlName="kategorija" [(value)]="data.kategorija" placeholder="Kategorija"
+          [ngClass]="{ 'is-invalid': submitted && kategorija.errors }">
+            <ng-container *ngFor="let kat of data.kategorije">
+              <mat-option [value]="kat.id">{{kat.naziv}}</mat-option>
+            </ng-container>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="row justify-content-center" style="margin-bottom: 15px">
+        <mat-form-field class="col-8">
+          <input required id="opis" formControlName="opis" placeholder="Opis stavke" matInput [ngClass]="{ 'is-invalid': submitted && opis.errors }">
+        </mat-form-field>
+      </div>
+  
+      <div class="row justify-content-center" style="margin-bottom: 15px">
+          <mat-form-field class="col-8">
+            <input required type="number" id="cijenaBezPdva" formControlName="cijenaBezPdva" placeholder="Cijena stavke bez PDV-a" matInput (change)="unosCijene($event.target.value)" [ngClass]="{ 'is-invalid': submitted && cijenaBezPdva.errors }">
+          </mat-form-field>
+        </div>
+
+        <div class="row justify-content-center" style="margin-bottom: 15px">
+          <mat-form-field class="col-8">
+            <input required type="number" id="cijenaSaPdvom"  formControlName="cijenaSaPdvom" placeholder="Cijena stavke sa PDV-om" matInput [ngClass]="{ 'is-invalid': submitted && cijenaSaPdvom.errors }">
+          </mat-form-field>
+        </div>
+
+        <div class="row justify-content-center" style="margin-bottom: 15px">
+          <mat-form-field class="col-8">
+            <input required type="number" id="pdv" formControlName="pdv" placeholder="Iznos PDV-a" matInput [ngClass]="{ 'is-invalid': submitted && pdv.errors }">
+          </mat-form-field>
+        </div>
+
+
+    </div>
+    <div mat-dialog-actions class="row justify-content-center">
+        <button mat-button style="margin-right: 5px" class="btn btn-success waves-effect waves-light" type="submit" [disabled]="!addStavkaForm.valid">Spremi</button>
+        <button mat-button (click)="onNoClick()" class="btn btn-warning waves-effect waves-light">Zatvori</button>
+    </div>
+  
+  </div>
+</form>
+

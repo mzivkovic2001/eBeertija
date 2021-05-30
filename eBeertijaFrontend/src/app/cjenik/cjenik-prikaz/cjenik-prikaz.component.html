@@ -1,0 +1,81 @@
+<div class="container-fluid">
+  <div class="row card-box" style="margin-top: 30px;">
+
+  <div class="datatable">
+    <div class="row">
+
+      <mat-form-field class="col-4">
+        <mat-select placeholder="Cjenik" matNativeControl required [(value)] = "currentCjenik"
+          (selectionChange)="displayStavkeForCurrentCjenik($event.value)">
+          <mat-option *ngFor="let cjenik of listaCjenika" [value]="cjenik">
+            {{ cjenik?.datumPocetkaPrimjene | date:'dd.MM.yyyy' }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <div>
+        <button mat-raised-button (click)="onNew()" type="button"
+          class="btn btn-outline-success btn-rounded waves-light waves-effect">Dodaj cjenik</button></div>
+      <div class="col-3" style="margin-right: -150px;">
+        <button *ngIf="currentCjenik?.isEditable" type="button"
+          class="btn btn-warning btn-rounded waves-light waves-effect" (click)="onEdit(currentCjenik)">Promjeni datum
+          primjene</button></div>
+      <div *ngIf="currentCjenik?.isEditable" class="col-2" style="margin-left: 0px;">
+        <button type="button" class="btn btn-danger btn-rounded waves-light waves-effect"
+          (click)="delete(currentCjenik)">Obriši cjenik</button></div>
+    </div>
+  </div>
+
+  <div class="mat-elevation-z8 datatable">
+    <button *ngIf="currentCjenik?.isEditable" (click)="newStavka()" type="button"
+      class="btn btn-success waves-light waves-effect">Dodaj stavku</button>
+
+
+
+    <mat-table [dataSource]="listData">
+
+      <ng-container matColumnDef="naziv">
+        <mat-header-cell *matHeaderCellDef>Naziv</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.naziv}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="kategorija">
+        <mat-header-cell *matHeaderCellDef>Kategorija</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{getNazivKategorije(element)}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="opis">
+        <mat-header-cell *matHeaderCellDef>Opis</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.opis}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="cijenaBezPdva">
+        <mat-header-cell *matHeaderCellDef>Cijena bez Pdv-a</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.cijenaBezPdva}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="cijenaSaPdvom">
+        <mat-header-cell *matHeaderCellDef>Cijena bez Pdv-a</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.cijenaSaPdvom}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="pdv">
+        <mat-header-cell *matHeaderCellDef>PDV</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.pdv}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef></mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <button *ngIf="currentCjenik?.isEditable" (click)="editStavka(element)" type="button"
+            class="btn btn-warning btn-sm"><i class="mdi mdi-grease-pencil"></i></button>
+          <button *ngIf="currentCjenik?.isEditable" (click)="deleteStavka(element)" type="button"
+            class="btn btn-danger btn-sm"><i class="dripicons-trash"></i></button>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>
+</div>
