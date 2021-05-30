@@ -94,7 +94,6 @@ C:\Users\Gabz\source\repos\eBeertija\eBeertijaBackend\eBeertijaBackend\bin\Debug
 C:\Users\Gabz\source\repos\eBeertija\eBeertijaBackend\eBeertijaBackend\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
 C:\Users\Gabz\source\repos\eBeertija\eBeertijaBackend\eBeertijaBackend\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
 C:\Users\Gabz\source\repos\eBeertija\eBeertijaBackend\eBeertijaBackend\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
-C:\Users\Gabz\source\repos\eBeertija\eBeertijaBackend\eBeertijaBackend\obj\Debug\netcoreapp3.1\eBeertijaBackend.csproj.AssemblyReference.cache
 C:\Users\Gabz\source\repos\eBeertija\eBeertijaBackend\eBeertijaBackend\obj\Debug\netcoreapp3.1\eBeertijaBackend.AssemblyInfoInputs.cache
 C:\Users\Gabz\source\repos\eBeertija\eBeertijaBackend\eBeertijaBackend\obj\Debug\netcoreapp3.1\eBeertijaBackend.AssemblyInfo.cs
 C:\Users\Gabz\source\repos\eBeertija\eBeertijaBackend\eBeertijaBackend\obj\Debug\netcoreapp3.1\eBeertijaBackend.csproj.CoreCompileInputs.cache
