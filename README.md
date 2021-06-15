@@ -6,13 +6,15 @@ Sustav je namijenjen administratoru, voditelju, ostalim zaposlenicima, te gostim
 
 
 TEHNOLOGIJE
-Frontend: Angular CLI v 8.3.0 (Web aplikacija) 
-Backend: Asp.net Api (Visual Studio 2019 + ASP.NET and web development (workload))
-DBMS: postgreSql - 13.3-2
-Node.js v 14.16.0
+
+    - Frontend: Angular CLI v 8.3.0 (Web aplikacija) 
+    - Backend: Asp.net Api (Visual Studio 2019 + ASP.NET and web development (workload))
+    - DBMS: postgreSql - 13.3-2
+    - Node.js v 14.16.0
 
 
 PRISTUPNI PARAMETRI ZA BAZU
+
     - Parametre je potrebno upisati unutar datoteke 'appsettings.json' koja se nalazi unutar direktorija 'eBeertijaBackend\eBeertijaBackend\appsettings.json'
     - U objektu "PGsqlContext" potrebno je izmijeniti atribut 'Password' - umjesto (*****) zvjezdica upisati lozinku koju ste ranije definirali prilikom instalacije postgresa.
 
@@ -31,6 +33,7 @@ Postgres - https://www.postgresql.org/download/windows/
 
 
 KORACI POKRETANJA
+
 1. Preuzeti projekt s github-a - https://github.com/mzivkovic2001/eBeertija - Unutar projekta 'ebeertija' nalaze se dva foldera: eBeertijaBackend, i eBeertijaFrontend
 2. Izmijeniti pristupne parametre za spajanje na bazu (vidi: PRISTUPNI PARAMETRI ZA BAZU)
 3. Otvoriti eBeertijaBackend.sln unutar visual studia:
