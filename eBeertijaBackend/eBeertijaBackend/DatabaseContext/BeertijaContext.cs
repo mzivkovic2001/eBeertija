@@ -95,23 +95,23 @@ namespace ebeertijaBackend.DatabaseContext
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            User gabrijela = new User { Id = 1, Email = "gjerkovic@veleri.hr", IsActive = true, Username = "gabrijela", FullName = "Gabrijela Jerković", Vrsta = VrstaUsera.ADMINISTRATOR };
-            User eni = new User { Id = 2, Email = "erabar@veleri.hr", IsActive = true, Username = "eni", FullName = "Eni Rabar", Vrsta = VrstaUsera.ADMINISTRATOR };
-            User marin = new User { Id = 3, Email = "mzivkovic@veleri.hr", IsActive = true, Username = "marin", FullName = "Marin Živković", Vrsta = VrstaUsera.ADMINISTRATOR };
+            User gabrijela = new User { Id = 1, Email = "admin@veleri.hr", IsActive = true, Username = "admin", FullName = "Admin Admin", Vrsta = VrstaUsera.ADMINISTRATOR };
+            User eni = new User { Id = 2, Email = "voditelj@veleri.hr", IsActive = true, Username = "voditelj", FullName = "Voditelj Voditelj", Vrsta = VrstaUsera.VODITELJ };
+            User marin = new User { Id = 3, Email = "konobar@veleri.hr", IsActive = true, Username = "konobar", FullName = "Konobar Konobar", Vrsta = VrstaUsera.KONOBAR };
 
             byte[] passwordHash, passwordSalt;
 
-            UserService.CreatePasswordHash("gabrijela", out passwordHash, out passwordSalt);
+            UserService.CreatePasswordHash("admin", out passwordHash, out passwordSalt);
 
 
             gabrijela.PasswordHash = passwordHash;
             gabrijela.PasswordSalt = passwordSalt;
             
-            UserService.CreatePasswordHash("enieni", out passwordHash, out passwordSalt);
+            UserService.CreatePasswordHash("voditelj", out passwordHash, out passwordSalt);
             eni.PasswordHash = passwordHash;
             eni.PasswordSalt = passwordSalt;
 
-            UserService.CreatePasswordHash("marin", out passwordHash, out passwordSalt);
+            UserService.CreatePasswordHash("konobar", out passwordHash, out passwordSalt);
             marin.PasswordHash = passwordHash;
             marin.PasswordSalt = passwordSalt;
 
