@@ -2,7 +2,7 @@
 
 E - Beertija
 
-Sustav je namijenjen voditelju, ostalim zaposlenicima, te gostima ugostiteljskih objekata za evidenciju i zaprimanje narudžbi, izdavanje računa, kreiranje cjenika, kreiranje rasporeda ugostiteljskog objekta.
+Sustav je namijenjen administratoru, voditelju, ostalim zaposlenicima, te gostima ugostiteljskih objekata za evidenciju i zaprimanje narudžbi, izdavanje računa, kreiranje cjenika, kreiranje rasporeda ugostiteljskog objekta.
 
 
 TEHNOLOGIJE
@@ -13,17 +13,19 @@ Node.js v 14.16.0
 
 
 PRISTUPNI PARAMETRI ZA BAZU
-Parametre je potrebno upisati unutar datoteke 'appsettings.json' koja se nalazi unutar direktorija 'eBeertijaBackend\eBeertijaBackend\appsettings.json'. U objektu "PGsqlContext" potrebno je izmijeniti atribut 'Password' - umjesto (*****) zvjezdica upisati lozinku koju ste ranije definirali prilikom instalacije postgresa.
+    - Parametre je potrebno upisati unutar datoteke 'appsettings.json' koja se nalazi unutar direktorija 'eBeertijaBackend\eBeertijaBackend\appsettings.json'
+    - U objektu "PGsqlContext" potrebno je izmijeniti atribut 'Password' - umjesto (*****) zvjezdica upisati lozinku koju ste ranije definirali prilikom instalacije postgresa.
 
 
 KORACI INSTALACIJE
 
 Visual Studio 2019 - Community - https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=16
-    1. Prije instalacije VS-a, unutar VS installera potrebno je označiti [ASP.NET and web development] workload
+    - Prije instalacije VS-a, unutar VS installera potrebno je označiti [ASP.NET and web development] workload
 
 Node.js - https://nodejs.org/en/download/
 
-Angular CLI - Unutar CMD-a potrebno je unijeti sljedeću naredbu: npm install -g @angular/cli
+Angular CLI
+    - Unutar CMD-a potrebno je unijeti sljedeću naredbu: npm install -g @angular/cli
 
 Postgres - https://www.postgresql.org/download/windows/
 
