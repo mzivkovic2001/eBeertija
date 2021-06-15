@@ -1,6 +1,6 @@
 <div class="container-fluid">
 <div class="row" *ngIf=(!editMode) style="margin-top: 5vh; margin-bottom: 20px;">
-    <div class="gumbLayout">
+    <div *ngIf="user.role <= 2" class="gumbLayout">
             <div class="justify-content-center">
                     <button (click)="editMode=true" class="btn btn-info waves-effect waves-light center-block">
                         <i class="fa fa-pencil m-r-5"></i><span> Raspored</span></button>
@@ -42,8 +42,8 @@
         [ngClass]="[stol.stolClass]" [style.top.px]="stol?.y" [style.left.px]="stol?.x"
         (dblclick)="goRacun(stol)" [autoClose]="'outside'"
         popoverTitle="{{stol?.narudzbaId != null ?  stol.prioritetNarudzbe + '. Narudzba' : ''}}" [ngbPopover]="popContent"
-        popoverClass="my-custom-class">
-        <span> <strong>{{stol?.oznakaStola}}</strong> </span>
+        popoverClass="my-custom-class" [matBadge]="stol.prioritetNarudzbe" matBadgePosition="after" matBadgeColor="accent">
+        <span>{{stol?.oznakaStola}}<strong></strong></span>
     </button>
      </ng-container>
     </div>

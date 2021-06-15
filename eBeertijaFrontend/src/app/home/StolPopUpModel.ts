@@ -8,6 +8,7 @@ export class StolPopUpModel {
     stariStol: StolDto;
     isEdit: boolean;
     isDeleted: boolean;
+    canDelete?: boolean;
 }
 export const orientationsList: any[] = [
     { 'id': 1, 'stupanj': 0, 'naziv': 'Vodoravno' },

@@ -36,13 +36,13 @@
 
         <div class="row justify-content-center" style="margin-bottom: 15px">
           <mat-form-field class="col-8">
-            <input required type="number" id="cijenaSaPdvom"  formControlName="cijenaSaPdvom" placeholder="Cijena stavke sa PDV-om" matInput [ngClass]="{ 'is-invalid': submitted && cijenaSaPdvom.errors }">
+            <input required readonly="" type="number" id="cijenaSaPdvom"  formControlName="cijenaSaPdvom" placeholder="Cijena stavke sa PDV-om" matInput [ngClass]="{ 'is-invalid': submitted && cijenaSaPdvom.errors }">
           </mat-form-field>
         </div>
 
         <div class="row justify-content-center" style="margin-bottom: 15px">
           <mat-form-field class="col-8">
-            <input required type="number" id="pdv" formControlName="pdv" placeholder="Iznos PDV-a" matInput [ngClass]="{ 'is-invalid': submitted && pdv.errors }">
+            <input required readonly="" type="number" id="pdv" formControlName="pdv" placeholder="Iznos PDV-a" matInput [ngClass]="{ 'is-invalid': submitted && pdv.errors }">
           </mat-form-field>
         </div>
 

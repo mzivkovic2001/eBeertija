@@ -7,6 +7,8 @@ import { AddStolComponent } from '../add-stol/add-stol.component';
 import { orientationsList } from './StolPopUpModel';
 import { CdkDragEnd } from '@angular/cdk/drag-drop';
 import { Router } from '@angular/router';
+import { AuthenticationService } from '../core/Services/authentication.service';
+import { UserDto } from '../Models/UserDto';
 
 @Component({
   selector: 'app-home',
@@ -19,11 +21,17 @@ export class HomeComponent implements OnInit {
   grafickiPrikaz: GrafickiPrikazDto;
   editMode: boolean;
   opened = true;
+  user: UserDto;
 
-  constructor(private grafickiPrikazService: GrafickiPrikazService, public dialog: MatDialog, private router: Router) { }
+  constructor(private grafickiPrikazService: GrafickiPrikazService, public dialog: MatDialog, private router: Router, public auth: AuthenticationService) { }
 
   ngOnInit() {
     this.isLoaded = false;
+    if (this.auth.isLoggedin()) {
+      this.user = this.auth.getUser();
+    }
+
+
     this.grafickiPrikazService.getGrafickiPrikaz().subscribe(data => {
       if (data) {
         this.grafickiPrikaz = data;
@@ -103,7 +111,8 @@ export class HomeComponent implements OnInit {
       stariStol: stol,
       odabranaOrientationStupanj: stol.orientation,
       orientation: orientationsList,
-      serijskiBrojUredaja: stol.serijskiBrojUredaja
+      serijskiBrojUredaja: stol.serijskiBrojUredaja,
+      canDelete: (stol.narudzbaId === null || stol.narudzbaId === undefined)
     }
   });
     dialogRef.afterClosed().subscribe(result => {

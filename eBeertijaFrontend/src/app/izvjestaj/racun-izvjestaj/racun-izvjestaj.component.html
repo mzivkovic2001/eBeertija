@@ -10,7 +10,7 @@
                     <div class="col-12">
                         <div class="col-6 form-group">
                             <mat-form-field class="col-10">
-                                <input id="datum" [(ngModel)]="displayDate"
+                                <input id="datum" [(ngModel)]="displayDate" [max] = "today"
                                   matInput [matDatepicker]="picker1" placeholder="Odaberite datum" class="offset-sm-3 col-sm-6">
                                 <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
                                 <mat-datepicker #picker1></mat-datepicker>
@@ -52,8 +52,8 @@
                         </td>
 
                         <td align="center">
-                    <button *ngIf="racun.isStorniran == false && racun.storniraniRacunId == null" type="button" class="btn btn-warning btn-sm" (click)="pogledajNarudzbu(racun)">
-                    <i class="fa fa-trash" (click)="stornoRacuna(racun)"></i></button>
+                    <button *ngIf="racun.isStorniran == false && racun.storniraniRacunId == null" type="button" class="btn btn-warning btn-sm" (click)="stornoRacuna(racun)"> <!-- (click)="pogledajNarudzbu(racun)" -->
+                    <i class="fa fa-trash"></i></button>
                         </td>
                     </tr>
                     </tbody>

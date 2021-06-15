@@ -84,7 +84,7 @@
                             <a [routerLink]="['/home']"><i class="mdi mdi-clock-fast"></i>Početna</a>
                         </li>
 
-                        <li>
+                        <li *ngIf="user.role <= 2">
                             <a [routerLink]="['/cjenici']"><i class="mdi mdi-clock-fast"></i>Cjenici</a>
                         </li>
 

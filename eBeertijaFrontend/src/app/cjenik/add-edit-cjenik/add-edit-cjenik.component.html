@@ -3,8 +3,8 @@
 <form [formGroup]="addCjenikForm" (ngSubmit)="onSubmit()" class="" action="#">
 <div class="row justify-content-center" style="margin-bottom: 25px">
   <mat-form-field class="col-10">
-    <input required id="datumPocetkaPrimjene" formControlName="datumPocetkaPrimjene"
-      matInput [matDatepicker]="picker1" placeholder="Datum pocetka primjene cjenika" class="offset-sm-3 col-sm-6" 
+    <input required id="datumPocetkaPrimjene" formControlName="datumPocetkaPrimjene" [min]="today"
+      matInput [matDatepicker]="picker1" placeholder="Datum pocetka primjene cjenika" class="offset-sm-3 col-sm-6"
       [ngClass]="{ 'is-invalid': submitted && datumPocetkaPrimjene.errors }">
     <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
     <mat-datepicker #picker1></mat-datepicker>
@@ -14,6 +14,6 @@
 <div mat-dialog-actions class="row justify-content-center">
       <button mat-button style="margin-right: 5px"
         class="btn btn-success waves-effect waves-light" type="submit" [disabled]="!addCjenikForm.valid">Spremi</button>
-      <button mat-button (click)="onNoClick()" class="btn btn-warning waves-effect waves-light">Zatvori</button>
+      <button mat-button (click)="onNoClick()" type="button" class="btn btn-warning waves-effect waves-light">Zatvori</button>
 </div>
 </form>

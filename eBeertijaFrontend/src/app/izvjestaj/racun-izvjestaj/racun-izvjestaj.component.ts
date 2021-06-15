@@ -32,6 +32,7 @@ export class RacunIzvjestajComponent implements OnInit, AfterViewInit, OnDestroy
   stavkeOdabranogRacuna: StavkaRacunaDto[];
   isViewStavki: boolean;
   displayDate: Date = new Date();
+  today = new Date();
 
   ngOnInit() {
     this.opcije = {
@@ -167,7 +168,7 @@ export class RacunIzvjestajComponent implements OnInit, AfterViewInit, OnDestroy
 
   stornoRacuna(racun: RacunIzvjestajDto) {
     this.racunService.stornoRacuna(racun.id).subscribe(data => {
-      this.ngOnInit();
+      this.getIzvjestajZaDanasnjiDatum();
     });
   }
 

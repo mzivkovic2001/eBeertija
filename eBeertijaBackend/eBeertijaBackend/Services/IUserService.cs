@@ -34,7 +34,7 @@ namespace ebeertijaBackend.Services
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
                 return null;
 
-            var user = _context.Users.SingleOrDefault(x => x.Username == username);
+            var user = _context.Users.SingleOrDefault(x => x.Username == username && x.IsActive);
 
             // check if username exists
             if (user == null)
@@ -64,7 +64,7 @@ namespace ebeertijaBackend.Services
             if (string.IsNullOrWhiteSpace(password))
                 throw new ApplicationException("Lozinka je obvezan podatak.");
 
-            if (_context.Users.Any(x => x.Username == user.Username))
+            if (_context.Users.Any(x => x.Username == user.Username && x.IsActive))
                 throw new ApplicationException("Korisničko ime \"" + user.Username + "\" je zauzeto.");
 
             byte[] passwordHash, passwordSalt;

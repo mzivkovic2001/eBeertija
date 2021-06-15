@@ -43,14 +43,14 @@
 
   <div *ngIf="data.id == null && isUpdateMode.value != true" class="col-12">
     <mat-form-field class="col-12"> 
-      <input id="password" formControlName="password" placeholder="Lozinka" required 
+      <input id="password" type="password" formControlName="password" placeholder="Lozinka" required 
        matInput>
     </mat-form-field>
   </div>
 
   <div *ngIf="data.id == null && isUpdateMode.value != true" class="col-12">
     <mat-form-field class="col-12"> 
-      <input required id="passwordRepeat" formControlName="passwordRepeat" placeholder="Ponovite lozinku"  
+      <input required id="passwordRepeat" type="password" formControlName="passwordRepeat" placeholder="Ponovite lozinku"  
        matInput>
     </mat-form-field>
   </div>
@@ -60,7 +60,7 @@
       <div class="button-center">
         <button mat-button style="margin-right: 5px" class="btn btn-success waves-effect waves-light" 
         type="submit" [disabled]="!addUpdateKorisnikForm.valid">Spremi</button>
-        <button mat-button (click)="onNoClick()" class="btn btn-warning waves-effect waves-light">Zatvori</button> 
+        <button mat-button (click)="onNoClick()" type="button" class="btn btn-warning waves-effect waves-light">Zatvori</button> 
       </div>
     </div>
   </form>

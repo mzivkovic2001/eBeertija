@@ -33,7 +33,7 @@ namespace ebeertijaBackend.Controllers
         public IActionResult GetGrafickiPrikazStolova()
         {
             var stolovi = context.Stolovi.Where(s => s.IsActive)
-                .OrderByDescending(s => s.Narudzbe.Where(n => n.IsActive && !n.IsOstvarenaNaRacunu && n.Datum.Date == DateTime.Now.Date).FirstOrDefault().Datum).ToList();
+                .OrderBy(s => s.Narudzbe.Where(n => n.IsActive && !n.IsOstvarenaNaRacunu && n.Datum.Date == DateTime.Now.Date).FirstOrDefault().Datum).ToList();
             var narudzbe = context.Narudzbe.Where(n => n.IsActive && !n.IsOstvarenaNaRacunu && n.Datum.Date == DateTime.Now.Date).ToList();
 
             var grafickiPrikaz = new GrafickiPrikazDto

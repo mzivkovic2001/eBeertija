@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { MatTableDataSource } from '@angular/material';
 import { AddEditCjenikComponent } from '../add-edit-cjenik/add-edit-cjenik.component';
 import { MatDialog } from '@angular/material';
@@ -25,7 +24,6 @@ export class CjenikPrikazComponent implements OnInit {
 
   constructor(
     private cjenikService: CjenikService,
-    private _Activatedroute: ActivatedRoute,
     public dialog: MatDialog,
     private stavkaService: StavkaCjenikaService
   ) {}

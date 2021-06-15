@@ -18,14 +18,18 @@ export class AddEditCjenikComponent implements OnInit {
 
    datumPocetkaPrimjene = new FormControl(this.data.datumPocetkaPrimjene, Validators.required);
 
+   today: Date = new Date();
+   
+
   ngOnInit() {
+    this.today.setDate(this.today.getDate() + 1);
     this.addCjenikForm = this.formBuilder.group({
       datumPocetkaPrimjene: this.datumPocetkaPrimjene
   });
   }
 
   onNoClick(): void {
-    this.dialogRef.close();
+    this.dialogRef.close(null);
   }
 
  onSubmit() {

@@ -18,6 +18,7 @@ import { RacunModule } from '@src/app/racun/racun.module';
 import { IzvjestajModule } from '@src/app/izvjestaj/izvjestaj.module';
 import { DataTablesModule } from 'angular-datatables';
 import { NarudzbaComponent } from '@src/app/narudzba/narudzba.component';
+import {MatBadgeModule} from '@angular/material/badge';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { NarudzbaComponent } from '@src/app/narudzba/narudzba.component';
     CjenikModule,
     RacunModule,
     IzvjestajModule,
+    MatBadgeModule,
     DataTablesModule.forRoot()
   ],
   exports: [

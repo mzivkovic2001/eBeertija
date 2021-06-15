@@ -58,7 +58,7 @@ export class AdministratorPageComponent implements OnInit {
       width: '500px',
       height: '620px',
       data: {
-        vrstaUsera: vrsteList,
+        vrstaUsera: vrsteList.filter(v => v['id'] >= this.trenutniUser.role),
         fullName: '',
         oib: '',
         username: '',
